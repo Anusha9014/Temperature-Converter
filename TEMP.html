@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+  <style>
+
+    body
+    {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-image: url("tom.jpg ");
+    }
+
+
+
+    h1 
+    {
+      text-align: center;
+    }
+
+    #container
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+    }
+
+    #input 
+    {
+      display: flex;
+      gap: 10px;
+    }
+
+    #result 
+    {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+
+    .red-square {
+  background-color: rgb(225, 16, 75);
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+  </style>
+
+</head>
+
+
+<body>
+<legend><center><br><br><br><br><h1>BHARAT INTERN</h1></legend>
+
+<div class="red-square">
+  <h1 style="color:black" >Temperature Converter</h1>
+  <div id="container">
+    <div>
+      <label for="celsius" style="color:blue">Celsius:</label>
+      <input type="number" id="celsius" />
+      <button onclick="convert()">Convert</button>
+      <div id="result"></div>
+  </div>
+</div>
+
+
+  <script>
+    function convert() 
+     {
+      var celsiusInput = document.getElementById("celsius");
+      var result = document.getElementById("result");
+
+      // Check if the Celsius input is empty
+      if (celsiusInput.value === "") {
+        result.innerText = "Please enter a temperature in Celsius.";
+        return;
+      }
+
+      var celsius = parseFloat(celsiusInput.value);
+      var fahrenheit = (celsius * 9) / 5 + 32;
+
+      result.innerText = celsius + "°C is equal to " + fahrenheit.toFixed(2) + "°F.";
+    }
+  </script>
+
+</body>
+</html>
